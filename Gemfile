@@ -31,18 +31,20 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+group :development, :test do
 
-gem 'capistrano', '~> 3.1.0'
-gem 'capistrano-bundler', '~> 1.1.2'
-gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano', require: false
+gem 'capistrano-bundler', require: false
+gem 'capistrano-rails', require: false
+gem 'capistrano3-puma', require: false
 
 # Add this if you're using rbenv
-  gem 'capistrano-rbenv', github: "capistrano/rbenv"
+  gem 'capistrano-rbenv', require: false
 
 # Add this if you're using rvm
 # gem 'capistrano-rvm', github: "capistrano/rvm"
 
-group :development, :test do
+# group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -54,7 +56,7 @@ group :development, :test do
   gem 'spring'
 end
 
-
+gem 'puma'
 gem 'spree', '3.0.4'
 gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-0-stable'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
